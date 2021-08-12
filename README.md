@@ -2,9 +2,11 @@
 다시공부임
 
 ========
-<img src ="https://github.com/ochestra365/SQLQUERY/blob/master/Image/20210812110811001.png"><br>
+<img src ="https://github.com/ochestra365/SQLQUERY/blob/master/Image/20210812110811001.png"><br><br>
 헤헤 로컬에서 리모트 브랜치를 따로따서 만들었다. 기분이 좋았따.<br>
 [!master_Branch](https://github.com/ochestra365/SQLQUERY/tree/master)<br>
+<img src="https://github.com/ochestra365/SQLQUERY/blob/master/Image/2709A1455541CDCF19.png"><br><br>
+GIT은 형상관리를 스냅샷처럼 때려박아서 가볍다. Tree구조로 브랜치를 관리한다. 그리고 GIT-PRO를 보면 좋다.<br>
 개발자는 수학공부가 필수다. 논리싸움이기 때문이다.<br>
 DB는 집합과 통계와 확률이다. 그리고 수학함수는 그냥 클래스의 메서드와 같다.<br>
 이를 잘 활용할 수록 써야하는 코딩문이 줄어들게 된다.<br>
