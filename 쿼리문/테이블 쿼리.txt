@@ -112,3 +112,41 @@ WHERE EXISTS(
 	SELECT *
 	FROM buytbl AS B
 	WHERE U.userID=B.userID);
+	
+=====================
+CREATE TABLE stdclubTbl
+(
+	num INT AUTO_INCREMENT NOT NULL,
+	stdName VARCHAR(10) NOT NULL,
+	clubName VARCHAR(10) NOT NULL,
+	PRIMARY KEY(num),
+	FOREIGN KEY(stdName) REFERENCES stdtbl(stdName),
+	FOREIGN KEY(clubName) REFERENCES clubtbl(clubName)
+)
+
+=======================
+SELECT S.stdName, S.addr, C.clubName, C.roomNo
+FROM stdtbl AS S
+	INNER JOIN stdclubtbl AS SC
+		ON S.stdName=SC.stdName
+	INNER JOIN clubtbl AS C
+		ON SC.clubName=C.clubName
+	ORDER BY S.stdName;
+INSERT INTO stdtbl VALUES ('김범수','경남'),('성시경','서울'),('조용필','경기'),('은지원','경북'),('바비킴','서울');	
+
+SELECT S.stdName, S.addr, C.clubName, C.roomNo
+FROM stdtbl AS S
+	INNER JOIN stdclubtbl as SC
+		ON S.stdName=SC.stdName
+	INNER JOIN clubtbl  AS C
+		ON SC.clubName=C.clubName
+	ORDER BY S.stdName;
+SELECT C.clubName,C.roomNo,S.stdName,S.addr
+FROM stdtbl AS S
+	INNER JOIN stdclubtbl AS SC
+		ON SC.stdName=S.stdName
+	INNER JOIN clubtbl AS C
+		ON SC.clubName=C.clubName
+	ORDER BY C.clubName;
+=================
+OUTER JOIN
