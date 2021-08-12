@@ -13,7 +13,9 @@ DB는 집합과 통계와 확률이다. 그리고 수학함수는 그냥 클래�
 회사 주력제품인 통신박스와 IO박스를 잘 다루기 위해서는 네트워크 공부도 해야 한다.<br>
 근데 ThreeHandShaking은 수학의 명제 파트에 해당한다.<br>
 어줍잖은 개발자는 되지 않겠다. 나는 특급 개발자를 목표로 한다.<br>
-<img src="https://github.com/ochestra365/SQLQUERY/blob/master/Image/%EB%A6%AC%EB%88%84%EC%8A%A4%20%ED%86%A0%EB%B0%9C%EC%A6%88.jpg">
-
+<img src="https://github.com/ochestra365/SQLQUERY/blob/master/Image/%EB%A6%AC%EB%88%84%EC%8A%A4%20%ED%86%A0%EB%B0%9C%EC%A6%88.jpg"><br><br>
+수악카페를 통해서 개념을 섭렵한다.
+<br><br>
+<img src="https://github.com/ochestra365/SQLQUERY/blob/master/Image/20210812120053001.png">
 
 [수악카페](https://www.youtube.com/user/minipole)
