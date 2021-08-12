@@ -81,3 +81,34 @@ SELECT userID AS '사용자', SUM(price*amount) AS '총구매액'
 	FROM buytbl GROUP BY userID;
 SELECT addr, MAX(height) FROM usertbl GROUP BY addr;
 
+=======================================
+CREATE TABLE testTbl2
+(
+id INT  NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+userName VARCHAR(3),
+age INT,
+nation VARCHAR(4INSERT INTO testtbl3 VALUES (NEXT VALUE FOR idSEQ,'지민',25,DEFAULT);FAULT '대한민국');
+INSERT INTO testtbl3 VALUES (NEXT VALUE FOR idSEQ,'지민',25,DEFAULT);
+
+==========================
+SELECT CAST('2020-10-19 12:35:29.123' AS DATETIME) AS 'datetime'
+=========================
+JOIN
+
+INNER JOIN은 교집합이다.
+SELECT * FROM buytbl
+	INNER JOIN usertbl
+	ON buytbl.userID=usertbl.userID
+WHERE buytbl.userID='JYP';
+
+SELECT buytbl.userID, name_ proName, addr, mobile1+mobile2 AS '연락처'
+FROM buytbl
+INNER JOIN usertbl
+ON buytbl.userID=usertbl.userID
+
+SELECT U.userID, U.addr
+FROM usertbl AS U
+WHERE EXISTS(
+	SELECT *
+	FROM buytbl AS B
+	WHERE U.userID=B.userID);
