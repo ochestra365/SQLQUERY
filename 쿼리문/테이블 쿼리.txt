@@ -51,3 +51,16 @@ GROUP BY
 SELECT userid, SUM(amount) FROM buytbl GROUP BY userid;
 SELECT userID AS '사용자 아이', SUM(amount) AS' 총구매개수'
 	FROM buytbl GROUP BY userID;
+==============
+SELECT AVG(amount) AS '평균 구매 개수' FROM buytbl;
+SELECT AVG(amount+1.0) AS '평균 구매 개수' FROM buytbl;
+SELECT AVG(CAST(amount AS DECIMAL(10,6))) AS '평균 구매 개수' FROM buytbl;
+SELECT name_, MAX(height), MIN(height) FROM usertbl;
+SELECT name_, MAX(height), MIN(height) FROM usertbl GROUP BY name_
+SELECT name_, height                               
+	FROM usertbl                                    
+	WHERE height = (SELECT MAX(height)FROM usertbl) 
+		OR height = (SELECT MIN(height)FROM usertbl);
+========
+SELECT COUNT(*) FROM usertbl;
+SELECT COUNT(mobile1) AS '휴대폰이 있는 사용자'FROM usertbl;
