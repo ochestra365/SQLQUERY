@@ -150,3 +150,15 @@ FROM stdtbl AS S
 	ORDER BY C.clubName;
 =================
 OUTER JOIN
+SELECT U.userID, U.name_,B.proName,U.addr,U.mobile1,U.mobile2 AS '연락처'
+FROM usertbl AS U
+	LEFT OUTER JOIN buytbl AS B
+		ON U.userID = B.userID
+	ORDER BY U.userID;
+--왼쪽이 기준이 되는 테이블이다. 왼쪽 테이블의 것은 모두 출력되어야 한다느 ㄴ말이다.
+
+SELECT U.userID, U.name_,B.proName,U.addr,U.mobile1,U.mobile2 AS '연락처'
+FROM buytbl AS B
+	RIGHT OUTER JOIN usertbl U
+		ON U.userID=B.userID
+	ORDER BY U.userID;
