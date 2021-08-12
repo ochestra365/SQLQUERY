@@ -1,0 +1,53 @@
+CREATE TABLE buyTbl(
+num INT ,
+userID	CHAR(8)	NOT NULL,
+proName	varchar(6)	NOT NULL,
+groupName	VARCHAR(4),
+price INT NOT NULL,
+amount SMALLINT	NOT NULL,
+PRIMARY KEY (num),
+FOREIGN	KEY(userID)	REFERENCES	usertbl(userID)
+
+);
+외래키
+===================
+INSERT INTO usertbl VALUES('LSG','이승기',1987,'서울','011','1111111',182,'2008-8-8');
+레코드 삽입
+==================
+조건검색
+SELECT userID,name_ FROM usertbl WHERE birthYear>=1970 AND height >=182;--조건 검색
+SELECT name_, height FROM usertbl WHERE height >=180 AND height<=183;==SELECT name_,height FROM usertbl WHERE height BETWEEN 180 AND 183;
+SELECT name_,addr FROM usertbl WHERE addr IN ('경남','전남','경북');==SELECT name_,addr FROM usertbl WHERE addr='경남' OR addr='전남' OR addr='경북';
+SELECT name_,height FROM usertbl WHERE name_ LIKE '김%';
+SELECT name_,height FROM usertbl WHERE name_ LIKE '_종신';
+SELECT name_, height FROM usertbl WHERE height >=180 AND height <=183;
+SELECT name_, addr FROM usertbl WHERE addr='경남' OR addr='전남' OR addr='경북';
+SELECT name_, addr FROM usertbl WHERE addr IN ('경남','전남','경북');
+SELECT name_,height FROM usertbl WHERE name_ LIKE '김%';
+SELECT name_,height FROM usertbl WHERE name_ LIKE '_종신';
+SELECT name_, height FROM usertbl WHERE height >177;
+SELECT name_, height FROM usertbl                                 
+	WHERE height> (SELECT height FROM usertbl WHERE name_='김경호');
+SELECT name_, height FROM usertbl
+	WHERE height >= ANY (SELECT height FROM usertbl WHERE addr= '경남');
+SELECT name_, height FROM usertbl                                  
+	WHERE height =ANY(SELECT height FROM usertbl WHERE addr='경남');
+SELECT name_, height FROM usertbl                                 
+	WHERE height IN (SELECT height FROM usertbl WHERE addr='경남');
+=======================
+정렬 출력
+SELECT name_,mDate FROM usertbl ORDER BY mDate;
+SELECT name_, mDate FROM usertbl ORDER BY mDate DESC;
+SELECT name_, height FROM usertbl ORDER BY height DESC, name_ ASC;
+SELECT addr FROM usertbl ORDER BY addr;
+SELECT DISTINCT addr FROM usertbl;
+
+SELECT userID, name_, birthYear FROM usertbl
+	ORDER BY birthYear
+	OFFSET 4 ROWS;
+	
+=============
+GROUP BY
+SELECT userid, SUM(amount) FROM buytbl GROUP BY userid;
+SELECT userID AS '사용자 아이', SUM(amount) AS' 총구매개수'
+	FROM buytbl GROUP BY userID;
