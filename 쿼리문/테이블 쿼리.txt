@@ -61,6 +61,23 @@ SELECT name_, height
 	FROM usertbl                                    
 	WHERE height = (SELECT MAX(height)FROM usertbl) 
 		OR height = (SELECT MIN(height)FROM usertbl);
+SELECT userID, AVG(amount+1.0) AS '평균구매개수' FROM buytbl GROUP BY userID;
+SELECT name_, MAX(height), MIN(height) FROM usertbl GROUP BY name_;
 ========
 SELECT COUNT(*) FROM usertbl;
 SELECT COUNT(mobile1) AS '휴대폰이 있는 사용자'FROM usertbl;
+
+=======================
+SELECT userID AS '사용자', SUM(price*amount) AS '총구매금액'
+	FROM buytbl
+	GROUP BY userID;
+	
+SELECT userID AS '사용자', SUM(price*amount) AS '총구매액'
+	FROM buyTbl
+	GROUP BY userID
+	HAVING SUM(price*amount) >1000;	
+===============
+SELECT userID AS '사용자', SUM(price*amount) AS '총구매액'
+	FROM buytbl GROUP BY userID;
+SELECT addr, MAX(height) FROM usertbl GROUP BY addr;
+
