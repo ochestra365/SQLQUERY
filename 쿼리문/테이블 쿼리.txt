@@ -162,3 +162,23 @@ FROM buytbl AS B
 	RIGHT OUTER JOIN usertbl U
 		ON U.userID=B.userID
 	ORDER BY U.userID;
+
+SELECT S.stdName, S.addr,C.clubName,C.roomNo
+FROM stdtbl AS S
+	LEFT OUTER JOIN stdclubtbl AS SC
+		ON S.stdName=SC.stdName
+	LEFT OUTER JOIN	clubtbl AS C
+		ON SC.clubName=C.clubName
+	ORDER BY S.stdName;
+
+SELECT	C.clubName, C.roomNo,S.stdName,S.addr
+FROM stdtbl AS S
+	LEFT OUTER JOIN stdclubtbl AS SC
+		ON	SC.stdName=S.stdName
+	RIGHT	OUTER	JOIN	clubtbl AS	C
+		ON	SC.clubName=C.clubName
+ORDER	BY	C.clubName;
+================================
+UPDATE `shopdb`.`producttbl` SET `make_Date`='2017-10-10' WHERE  `idx`=1;
+SELECT `idx`, `productName`, `cost`, `make_Date`, `company`, `amount` FROM `shopdb`.`producttbl` WHERE  `idx`=1;
+INSERT INTO producttbl VALUES(2,'세탁기',20,'2018-09-01','LG',3);
